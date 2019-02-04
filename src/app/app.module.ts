@@ -9,15 +9,29 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms'
+import { HeaderComponet } from './header/header.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
+import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
+import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponet,
+    RecipesComponent,
+    RecipesListComponent,
+    RecipesDetailComponent,
+    RecipesItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent
   ],
-  imports: [
+  imports: [  
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
