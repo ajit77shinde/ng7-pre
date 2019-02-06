@@ -1,3 +1,23 @@
-<p>
-  shopping-edit works!
-</p>
+<div class="row">
+  <div class="col-12">
+      <form role="search" class="navbar-form-custom" [formGroup]="myGroup">
+      <div class="row">
+        <div class="col-5 form-group">
+          <label for="name">Nmae</label>
+          <input type="text" id="name" class="for-control">
+        </div>
+        <div class="col-2">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-success">Add</button>
+          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-primary">clear</button>
+        </div>
+      </div>
+   </form>
+  </div>
+</div>
