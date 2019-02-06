@@ -1,9 +1,9 @@
 <main class="grid">
     <article>
-      <img src="" alt="Sample photo" class="center">
+      <img src="{{recipe.imagePath}}" alt="Sample photo" class="center">
       <div class="text">
-          <h4 class="list-group-item-heading">gfjkghjweg gjkshgj</h4>
-          <p class="list-group-item-text">agreagra ff</p>
+          <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+          <p class="list-group-item-text">{{ recipe.description }}</p>
         <button routerLink="recipeDetails" >Details</button>
       </div>
     </article>

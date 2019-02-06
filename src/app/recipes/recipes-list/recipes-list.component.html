@@ -8,14 +8,15 @@
   <div class="col-md-12">
   </div>
 </div>
-<!-- <app-card></app-card> -->
+
 <main class="grid">
   <article *ngFor="let recipe of recipes">
-    <img src="{{recipe.imagePath}}" alt="Sample photo" class="center">
+      <app-card [recipe]="recipe"></app-card>
+    <!-- <img src="{{recipe.imagePath}}" alt="Sample photo" class="center">
     <div class="text">
         <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
         <p class="list-group-item-text">{{ recipe.description }}</p>
       <button routerLink="recipeDetails" >Details</button>
-    </div>
+    </div> -->
   </article>
 </main>
