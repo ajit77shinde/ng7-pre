@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-12">
-    <button type="button" class="btn btn-success mt-2">New Recipe</button>
+    <button (click)='addRecipe()' type="button" class="btn btn-success mt-2">New Recipe</button>
   </div>
+  <div>
+    <label>Name: <input type="text" [formControl]="name"></label>
+  </div>
+  <!-- <p>value: {{name: name.value}}</p> -->
 </div>
 <hr>
 <div class="row">
