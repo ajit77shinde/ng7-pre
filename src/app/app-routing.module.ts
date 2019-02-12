@@ -8,13 +8,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
+import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 
 const routes: Routes = [
   { path: '', component: RecipesComponent },
   { path: 'shoppingList', component: ShoppingListComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'recipeDetails', component:RecipesDetailComponent}
+  { path: 'recipeDetails', component:RecipesDetailComponent},
+  { path: 'createRecipe', component:CreateRecipeComponent}
 ];
 
 @NgModule({

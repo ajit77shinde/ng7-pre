@@ -1,0 +1,64 @@
+<div class="jumbotron">
+  <div class="custom-container">
+    <div class="row">
+      <div class="col-md-6 offset-md-2">
+        <h3>Add new Recipe </h3>
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input formControlName="title" class="form-control" type="text" 
+            [ngClass]="{'is-invalid': f.title.touched && f.title.errors}"
+            id="title" >
+            <div *ngIf="f.title.touched && f.title.errors" class="invalid-feedback">
+              <div *ngIf="f.title.errors.required">Title is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input formControlName="description" class="form-control" type="text" 
+            [ngClass]="{'is-invalid': f.description.touched && f.description.errors}"
+            id="title">
+            <div *ngIf="f.description.touched && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">Description is required.</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <input formControlName="ingredients" class="form-control" type="text"
+            [ngClass]="{'is-invalid': f.ingredients.touched && f.ingredients.errors}"
+            id="title">
+            <div *ngIf="f.ingredients.touched && f.ingredients.errors" class="invalid-feedback">
+              <div *ngIf="f.ingredients.touched && f.ingredients.errors">Ingredients are required.</div>  </div>
+          </div>
+          <div class="form-group">
+            <label for="detail">Detail</label>
+            <input formControlName="detail" class="form-control" type="text"
+            [ngClass]="{'is-invalid': f.detail.touched && f.detail.errors}"
+            id="detail">
+            <div *ngIf="f.detail.touched && f.detail.errors" class="invalid-feedback">
+              <div *ngIf="f.detail.touched && f.detail.errors">Details are required</div>
+            </div>
+          </div>
+          <button class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class='row'>
+  <div class="col-md-6 pt-5">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <label>Title: <input type="text" formCountrolName="title"></label>
+    <label>Desccription: <input type="text" formCountrolName="description"></label>
+    <label> Ingredients: <input type="text" formCountrolName="ingredients"></label>
+    <label>Details: <input type="text" formCountrolName="details"></label>
+    <button type="submit" class="" [disabled]="!recipeForm.valid">Submit</button>
+    <label for="">{{recipeForm.valid}}</label>
+  </form>
+</div>
+</div> -->

@@ -21,6 +21,7 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { CardComponent } from './shared/card/card.component';
 
 import { RecipeService } from './services/recipe.service';
+import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { RecipeService } from './services/recipe.service';
     ShoppingEditComponent,
     CockpitComponent,
     ServerElementComponent,
-    CardComponent
+    CardComponent,
+    CreateRecipeComponent
   ],
   imports: [  
     BrowserModule,

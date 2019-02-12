@@ -1,30 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Recipe } from '../recipes/recipes.model';
 @Injectable({
-    providedIn: 'root'
-    
-  })
-  export class RecipeService {
+  providedIn: 'root'
 
-    uri = 'http://localhost:3000';
-      constructor(private http: HttpClient) {}
+})
+export class RecipeService {
+  recipeobservable: Observable<Recipe[]>;
 
-    addRecipeData(recipe_name,recipe_description){
-        console.log("Recipe data to be store in database");
-        console.log(recipe_name);
-        console.log(recipe_description);
-        const obj = {
-            title: recipe_name,
-            description: recipe_description
-        };
-        console.log('adding recipe data ', `${this.uri}/recipes`);
+  uri = 'http://localhost:3000';
+  constructor(private http: HttpClient) { }
 
-        this.http.post(`${this.uri}/recipes`, obj)
-        .subscribe(res => console.log('Done'));
-    }
-
-       getRecipeData(){
-        //    console.log('http://localhost:3000/recipes');
-       }
+  addRecipeData(newRecipe) {
+    console.log('adding recipe data ', `${this.uri}/recipes`);
+    this.http.post(`${this.uri}/recipes`, newRecipe)
+      .subscribe(res => console.log('Done'));
   }
+
+  getRecipeData() {
+    console.log('in get recipe data called');
+    return this.http.get<Recipe[]>(`${this.uri}/recipes`);
+  }
+}
