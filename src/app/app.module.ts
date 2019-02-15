@@ -19,9 +19,11 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { CardComponent } from './shared/card/card.component';
-
+//import the ng2-file-upload directive so we can add it to our declarations.
+import { FileSelectDirective } from 'ng2-file-upload';
 import { RecipeService } from './services/recipe.service';
 import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.component';
+import { RecipesImgComponent } from './recipes/recipes-img/recipes-img.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { CreateRecipeComponent } from './recipes/create-recipe/create-recipe.com
     CockpitComponent,
     ServerElementComponent,
     CardComponent,
-    CreateRecipeComponent
+    CreateRecipeComponent,
+    RecipesImgComponent,
+    FileSelectDirective
   ],
   imports: [  
     BrowserModule,
