@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Recipe } from '../recipes/recipes.model';
 @Injectable({
   providedIn: 'root'
-
 })
 export class RecipeService {
   recipeobservable: Observable<Recipe[]>;
@@ -12,26 +11,23 @@ export class RecipeService {
   uri = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
+  uploadImage(newRecipe,imgData) {
+    let fd = new FormData();
 
-  uploadImage(imgData) {
-    const fd = new FormData();
-    fd.append('image',imgData,imgData.name  )
-    console.log(imgData);
+    fd.append('image',imgData,imgData.name);
+    fd.append('title',newRecipe.title);
     this.http.post(`${this.uri}/recipes/image_upload`,fd)
-    .subscribe(res => console.log('Done'));
+    .subscribe(res => console.log('Done', res));
   }
 
   addRecipeData(newRecipe,imageData) {
-    const fd = new FormData();
-    fd.append('newRecipe',newRecipe);
-    fd.append('imageData',imageData);
-    console.log('adding recipe data ');
-    console.log(newRecipe);
-    this.http.post(`${this.uri}/recipes`,fd)
+    let fd1 = new FormData();
+    // fd1.append('newRecipe',newRecipe);
+    fd1.append('image',imageData);
+    this.http.post(`${this.uri}/recipes`,fd1)
       .subscribe(res => console.log('Done'));
   }
   getRecipeData() {
-    console.log('in get recipe data called');
     return this.http.get<Recipe[]>(`${this.uri}/recipes`);
   }
 }

@@ -15,9 +15,7 @@ export class CreateRecipeComponent implements OnInit {
   submited: true
   constructor(private formBuilder: FormBuilder, private rs: RecipeService) { }
   imageOutPut($event){
-  this.imageData = $event;
-  console.log("imageData");
-  console.log(this.imageData)
+  this.imageData = $event.file.rawFile;
 }
 
   ngOnInit() {
@@ -34,22 +32,13 @@ export class CreateRecipeComponent implements OnInit {
   }
   onSubmit() {
     this.submited = true
-    console.warn(this.recipeForm);
-
     const recipeFormObj = this.recipeForm.controls
-
-    console.log("data is send from33333333333")
     const newRecipe = {
       title: recipeFormObj.title.value,
       description: recipeFormObj.description.value,
       ingredients: recipeFormObj.ingredients.value,
       detail: recipeFormObj.detail.value
-      // fileData: this.exampleParent
     }
-    // this.formData.append('newRecipe', newRecipe);
-    console.log("data is send from44444444444")
-    let dataToBeSend = {formdata: newRecipe, imageDta: this.imageData }
-    console.log('object to be pass to service',dataToBeSend); 
-    this.rs.addRecipeData(newRecipe, this.imageData);
+    this.rs.uploadImage(newRecipe, this.imageData);
   }
 }
