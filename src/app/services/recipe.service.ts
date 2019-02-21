@@ -13,11 +13,16 @@ export class RecipeService {
 
   uploadImage(newRecipe,imgData) {
     let fd = new FormData();
-
+      // for(let fileData in newRecipe){
+      //   fd.append()
+      // }
     fd.append('image',imgData,imgData.name);
     fd.append('title',newRecipe.title);
+    fd.append('description',newRecipe.description);
+    fd.append('ingredients',newRecipe.ingredients);
+    fd.append('detail',newRecipe.detail);
     this.http.post(`${this.uri}/recipes/image_upload`,fd)
-    .subscribe(res => console.log('Done', res));
+    .subscribe(res => res);
   }
 
   addRecipeData(newRecipe,imageData) {

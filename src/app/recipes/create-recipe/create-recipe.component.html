@@ -40,28 +40,14 @@
             <div *ngIf="f.detail.touched && f.detail.errors" class="invalid-feedback">
               <div *ngIf="f.detail.touched && f.detail.errors">Details are required</div>
             </div>
+            <div class="col-md-6">
+              <app-recipes-img (imageOutPut)="imageOutPut($event)"></app-recipes-img>
+            </div>
           </div>
           <button class="btn btn-primary">Submit</button>
         </form>
       </div>
-      <div class="col-md-6">
-        <app-recipes-img (imageOutPut)="imageOutPut($event)"></app-recipes-img>
-      </div>
+      
     </div>
   </div>
 </div>
-
-
-
-<!-- <div class='row'>
-  <div class="col-md-6 pt-5">
-  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-    <label>Title: <input type="text" formCountrolName="title"></label>
-    <label>Desccription: <input type="text" formCountrolName="description"></label>
-    <label> Ingredients: <input type="text" formCountrolName="ingredients"></label>
-    <label>Details: <input type="text" formCountrolName="details"></label>
-    <button type="submit" class="" [disabled]="!recipeForm.valid">Submit</button>
-    <label for="">{{recipeForm.valid}}</label>
-  </form>
-</div>
-</div> -->

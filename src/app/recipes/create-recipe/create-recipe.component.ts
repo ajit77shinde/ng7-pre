@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { FileItem } from 'ng2-file-upload';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-recipe',
@@ -13,7 +14,7 @@ export class CreateRecipeComponent implements OnInit {
   imageData: FileItem;
   recipeForm: FormGroup
   submited: true
-  constructor(private formBuilder: FormBuilder, private rs: RecipeService) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private rs: RecipeService) { }
   imageOutPut($event){
   this.imageData = $event.file.rawFile;
 }
@@ -39,6 +40,9 @@ export class CreateRecipeComponent implements OnInit {
       ingredients: recipeFormObj.ingredients.value,
       detail: recipeFormObj.detail.value
     }
-    this.rs.uploadImage(newRecipe, this.imageData);
+    let response = this.rs.uploadImage(newRecipe, this.imageData);
+    if(response!== null)
+      this.router.navigate(['/'])
+    // redirect to recipe list
   }
 }
