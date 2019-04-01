@@ -1,5 +1,5 @@
 # Ng7Pre
-This project i srfont end of ng7-pre-recipe-api
+This project is front end of ng7-pre-recipe-api.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
 ## Development server
